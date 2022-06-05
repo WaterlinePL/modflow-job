@@ -13,7 +13,6 @@ spec:
       - name: modflow
         image: <modflow-job-image>
         args: ["hflow-job-execute", "<task_id>", "<redis_url>"]
-        # args: ["sleep", "infinity"]
         volumeMounts:
         - mountPath: /workspace
           name: nfs-vol
