@@ -1,0 +1,4 @@
+if not exist "..\..\output\NUL" mkdir "..\..\output"
+if not exist "..\..\output\output.cekcyn17\NUL" mkdir "..\..\output\output.cekcyn17"
+..\..\bin\mf2005.exe cekcyn17.nam /wait
+pause
