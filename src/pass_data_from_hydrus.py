@@ -4,7 +4,7 @@ from typing import List
 import flopy
 import numpy as np
 
-from src.shape import Shape
+from shape import Shape
 
 
 def update_rch(modflow_workspace_path: str,

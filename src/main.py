@@ -1,13 +1,21 @@
 import logging
 import os
+import sys
 from sys import argv
 
-from src import shape
-from src.pass_data_from_hydrus import update_rch
+import shape
+from pass_data_from_hydrus import update_rch
+
+LOG_FORMAT = "[%(levelname)s] [%(asctime)s] - %(message)s"
+
+logging.basicConfig(stream=sys.stdout,
+                    filemode="w",
+                    format=LOG_FORMAT,
+                    level=logging.INFO)
 
 if __name__ == '__main__':
     if len(argv) < 4 or len(argv) > 5:
-        logging.log(logging.ERROR, f"Usage {argv[0]} <project_name> <modflow_model_name> <nam_file> [spin up in days]")
+        raise ValueError(f"Usage {argv[0]} <project_name> <modflow_model_name> <nam_file> [spin up in days]")
 
     project_name = argv[1]
     modflow_model_name = argv[2]
