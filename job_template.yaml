@@ -8,14 +8,14 @@ spec:
       volumes:
       - name: nfs-vol
         persistentVolumeClaim:
-          claimName: <nfs-volume-name>
+         claimName: <nfs-volume-name>
       containers:
       - name: modflow
-        image: <modflow-job-image>
-        args: ["hflow-job-execute", "<task_id>", "<redis_url>"]
+        image: watermodelling/modflow-job:latest
+        imagePullPolicy: "Always"
+       args: ["hflow-job-execute", "<task_id>", "<redis_url>"]
         volumeMounts:
         - mountPath: /workspace
           name: nfs-vol
-          subPath: boi/modflow/cekcyn17
       restartPolicy: Never
   backoffLimit: 1
