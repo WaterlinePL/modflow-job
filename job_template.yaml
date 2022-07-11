@@ -8,7 +8,7 @@ spec:
       volumes:
       - name: nfs-vol
         persistentVolumeClaim:
-         claimName: <nfs-volume-name>
+         claimName: <nfs-pvc-name>
       containers:
       - name: modflow
         image: watermodelling/modflow-job:latest
